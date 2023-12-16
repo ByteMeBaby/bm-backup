@@ -92,6 +92,7 @@
     "tailwindcss": "^3.3.6"
   },
   "dependencies": {
-    "class-variance-authority": "^0.7.0"
+    "class-variance-authority": "^0.7.0",
+    "tailwind-merge": "^2.1.0"
   }
 }

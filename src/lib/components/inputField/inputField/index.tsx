@@ -3,6 +3,7 @@ import { Input } from "../input";
 import { Label } from "../label";
 import { Error } from "../error/error";
 import { cva, VariantProps } from "class-variance-authority";
+import { twMerge } from "tailwind-merge";
 
 const inputField = cva("", {
   variants: {
@@ -29,9 +30,12 @@ export function InputField({
 }: InputFieldProps) {
   return (
     <div
-      className={`${inputField({
-        layout,
-      })} ${className}`}
+      className={twMerge(
+        inputField({
+          layout,
+        }),
+        className
+      )}
     >
       {children}
     </div>

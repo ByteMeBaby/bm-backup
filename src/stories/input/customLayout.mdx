@@ -1,0 +1,26 @@
+import { Meta, Primary, Source, Controls } from "@storybook/blocks";
+import * as componentStories from "./customLayout.stories";
+
+<Meta of={componentStories} />
+
+It is possible to change structure or the layout of the Input field as below.
+
+<Source
+  language="tsx"
+  code={`import {InputField} from '@metalnet/baremetal/input';`}
+/>
+
+And change structure as the way you want.
+
+<Source
+  language="tsx"
+  code={`<InputField>
+  <InputField.Label htmlFor={id}>{label}</InputField.Label>
+  <InputField.Input id={id} type={type} onChange={onChange} />
+  <InputField.Error>error</InputField.Error>
+</InputField>`}
+/>
+
+<Primary />
+<Controls />
+```

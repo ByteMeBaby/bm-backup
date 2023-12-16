@@ -10,6 +10,7 @@ export type ComponentProps = {
   labelClasses?: string;
   intent?: "primary" | "error" | "warning";
   placeholder?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function Input({
@@ -22,6 +23,7 @@ export default function Input({
   labelClasses,
   placeholder,
   intent = "primary",
+  onChange,
 }: ComponentProps) {
   return (
     <InputField className={`${wrapperClasses}`}>
@@ -33,6 +35,7 @@ export default function Input({
         className={inputClasses}
         intent={intent}
         placeholder={placeholder}
+        onChange={onChange}
       />
       {error && (
         <InputField.Error className={errorWrapperClasses} intent={intent}>
@@ -40,8 +43,8 @@ export default function Input({
 
           {Array.isArray(error) && (
             <ul>
-              {error.map((err, index) => (
-                <li key={index}>{err}</li>
+              {error.map((err) => (
+                <li key={err}>{err}</li>
               ))}
             </ul>
           )}

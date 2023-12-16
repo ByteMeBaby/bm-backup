@@ -1,12 +1,9 @@
-import { CompoundedInput } from "./compoundComponent";
+import { CustomLayout } from "./customLayout";
 import { Meta, StoryObj } from "@storybook/react";
 
-/**
- * If you want to customize the structure of the Inputfield instead of using Input component directly, You could do that with InputField component
- */
-const meta: Meta<typeof CompoundedInput> = {
-  component: CompoundedInput,
-  title: "Input/Compound Component",
+const meta: Meta<typeof CustomLayout> = {
+  component: CustomLayout,
+  title: "Input/Custom layout",
   parameters: {
     layout: "centered",
   },
@@ -18,6 +15,10 @@ const meta: Meta<typeof CompoundedInput> = {
     type: {
       control: "text",
     },
+    error: {
+      control: "text",
+    },
+    onChange: { action: "onChange" },
   },
 };
 

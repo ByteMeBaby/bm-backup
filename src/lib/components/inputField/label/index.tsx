@@ -1,6 +1,6 @@
 import { cva, VariantProps } from "class-variance-authority";
 
-const label = cva("", {
+const label = cva("text-sm", {
   variants: {
     intent: {
       primary: "text-bm_gray-900",
