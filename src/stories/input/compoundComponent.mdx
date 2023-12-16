@@ -1,0 +1,25 @@
+import { Meta, Primary, Source } from "@storybook/blocks";
+import * as componentStories from "./compoundComponent.stories";
+
+<Meta of={componentStories} />
+
+You can customize the structure of the input very easily with compound components.
+
+<Source
+  language="tsx"
+  code={`import {InputField} from '@metalnet/baremetal/input';`}
+/>
+
+And use structure it the way you want
+
+<Source
+  language="tsx"
+  code={`<InputField>
+  <InputField.Label htmlFor={id}>{label}</InputField.Label>
+  <InputField.Input id={id} type={type} />
+  <InputField.Error>error</InputField.Error>
+</InputField>`}
+/>
+
+<Primary />
+```
