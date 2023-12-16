@@ -3,9 +3,9 @@ import { cva, VariantProps } from "class-variance-authority";
 const label = cva("", {
   variants: {
     intent: {
-      primary: "text-gray-500",
-      error: "text-red-500",
-      warning: "text-red-500",
+      primary: "text-bm_gray-900",
+      error: "text-bm_danger-500 ",
+      warning: "text-bm_warning-500",
     },
   },
 });
@@ -20,12 +20,12 @@ export interface LabelProps
   extends VariantProps<typeof label>,
     ComponentProps {}
 
-export function Label({ children, htmlFor, className }: LabelProps) {
+export function Label({ children, htmlFor, className, intent }: LabelProps) {
   return (
     <label
-      className={`${{
-        intent: "primary",
-      }} ${className}`}
+      className={`${label({
+        intent,
+      })} ${className}`}
       htmlFor={htmlFor}
     >
       {children}

@@ -2,33 +2,40 @@ import { InputField } from "./inputField";
 
 export type ComponentProps = {
   label: string;
-  error: string | string[];
+  error?: string | string[];
   id?: string;
-  wrapperClass: string;
-  inputClass: string;
-  errorWrapperClass: string;
-  labelClass: string;
-  intent: "primary" | "error" | "warning";
+  wrapperClasses?: string;
+  inputClasses?: string;
+  errorWrapperClasses?: string;
+  labelClasses?: string;
+  intent?: "primary" | "error" | "warning";
+  placeholder?: string;
 };
 
 export default function Input({
   label,
   error,
   id = "input" + Date.now(),
-  wrapperClass,
-  inputClass,
-  errorWrapperClass,
-  labelClass,
+  wrapperClasses,
+  inputClasses,
+  errorWrapperClasses,
+  labelClasses,
+  placeholder,
   intent = "primary",
 }: ComponentProps) {
   return (
-    <InputField className={`${wrapperClass}`}>
-      <InputField.Label className={labelClass} htmlFor={id} intent={intent}>
+    <InputField className={`${wrapperClasses}`}>
+      <InputField.Label className={labelClasses} htmlFor={id} intent={intent}>
         {label}
       </InputField.Label>
-      <InputField.Input id={id} className={inputClass} intent={intent} />
+      <InputField.Input
+        id={id}
+        className={inputClasses}
+        intent={intent}
+        placeholder={placeholder}
+      />
       {error && (
-        <InputField.Error className={errorWrapperClass} intent={intent}>
+        <InputField.Error className={errorWrapperClasses} intent={intent}>
           {typeof error === "string" && error}
 
           {Array.isArray(error) && (

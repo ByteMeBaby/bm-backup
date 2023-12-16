@@ -1,11 +1,11 @@
 import { screen, render } from "@testing-library/react";
-import { InputField } from "../../src/lib/components/inputField";
+import Input, { InputField } from "../../src/lib/components/inputField";
 
-describe("Simple input", () => {
+describe("Basic input", () => {
   it("renders a input component", () => {
-    render(<InputField.Input id="input" />);
+    render(<Input label="textbox" id="input" />);
 
-    expect(screen.getByRole("textbox")).toBeInTheDocument();
+    expect(screen.getByLabelText("textbox")).toBeInTheDocument();
   });
 });
 

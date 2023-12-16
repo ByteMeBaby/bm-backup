@@ -3,9 +3,9 @@ import { cva, VariantProps } from "class-variance-authority";
 const errorClasses = cva("", {
   variants: {
     intent: {
-      primary: "text-red-500",
-      warning: "text-yellow-500",
-      error: "text-red-500",
+      primary: "text-bm_primary-500",
+      warning: "text-bm_warning-500",
+      error: "text-bm_danger-500",
     },
   },
 });

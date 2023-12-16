@@ -1,11 +1,11 @@
 import "./App.css";
-import { Input } from "../../dist/components/inputField/input";
+import Input from "../../src/lib/components/inputField";
 import React from "react";
 
 function App() {
   return (
     <>
-      <Input id="input" className="border" type="number" />
+      <Input id="input" label="" />
     </>
   );
 }

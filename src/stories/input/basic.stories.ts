@@ -23,6 +23,7 @@ export const Input: Story = {
   args: {
     id: "input",
     intent: "primary",
+    label: "First Name",
   },
 };
 
@@ -30,7 +31,8 @@ export const InputError: Story = {
   args: {
     id: "input",
     intent: "error",
-    error: ["This is an error", "This is another error"],
+    label: "First Name",
+    error: ["First name is required", "This is another error"],
   },
 };
 
