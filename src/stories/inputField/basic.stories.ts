@@ -2,9 +2,13 @@ import Component from "../../lib/components/inputField";
 import { Meta, StoryObj } from "@storybook/react";
 // import "../../index.css";
 
+/**
+ * This is a wrapper component around Input, Label and Error compound components.
+ *
+ */
 const meta: Meta<typeof Component> = {
   component: Component,
-  title: "Input/Basic",
+  title: "Inputfield/Basic",
   parameters: {
     layout: "centered",
   },

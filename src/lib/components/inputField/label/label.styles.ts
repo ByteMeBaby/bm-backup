@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-export const label = cva("pb-1", {
+export const label = cva("", {
   variants: {
     intent: {
       primary: "text-bm_gray-900",

@@ -20,7 +20,7 @@ export function CustomLayout({
       <div className="flex items-center">
         <InputField.Label
           htmlFor={id}
-          className="mr-1 text-gray-600"
+          className="mr-1 text-gray-600 pb-0"
           bold
           size={"sm"}
         >

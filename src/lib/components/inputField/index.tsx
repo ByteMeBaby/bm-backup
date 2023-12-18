@@ -12,19 +12,19 @@ export type ComponentProps = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   size?: "xs" | "sm" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl";
   boldLabel?: boolean;
-  styles: React.CSSProperties;
-  labelStyles: React.CSSProperties;
-  inputStyles: React.CSSProperties;
-  errorStyles: React.CSSProperties;
-  inputClasses: string;
-  inputWrapperClasses: string;
-  inputWrapperStyles: React.CSSProperties;
-  postfix: React.ReactNode;
-  prefix: React.ReactNode;
-  prefixWrapperClasses: string;
-  postfixWrapperClasses: string;
-  prefixWrapperStyles: React.CSSProperties;
-  postfixWrapperStyles: React.CSSProperties;
+  styles?: React.CSSProperties;
+  labelStyles?: React.CSSProperties;
+  inputStyles?: React.CSSProperties;
+  errorStyles?: React.CSSProperties;
+  inputClasses?: string;
+  inputWrapperClasses?: string;
+  inputWrapperStyles?: React.CSSProperties;
+  postfix?: React.ReactNode;
+  prefix?: React.ReactNode;
+  prefixWrapperClasses?: string;
+  postfixWrapperClasses?: string;
+  prefixWrapperStyles?: React.CSSProperties;
+  postfixWrapperStyles?: React.CSSProperties;
 };
 
 export default function Input({
