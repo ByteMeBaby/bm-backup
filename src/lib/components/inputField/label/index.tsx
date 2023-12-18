@@ -19,7 +19,7 @@ export function Label({
   className,
   intent,
   bold,
-  size = "sm",
+  size,
   style,
 }: LabelProps) {
   return (

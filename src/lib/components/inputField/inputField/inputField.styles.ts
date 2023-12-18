@@ -21,4 +21,9 @@ export const inputField = cva("", {
       true: "w-full",
     },
   },
+  defaultVariants: {
+    layout: "col",
+    fullWidth: true,
+    size: "sm",
+  },
 });

@@ -28,4 +28,9 @@ export const input = cva("focus:ring-1 focus:outline-none focus:ring-inset", {
       true: "w-full",
     },
   },
+  defaultVariants: {
+    intent: "primary",
+    size: "sm",
+    fullWidth: true,
+  },
 });

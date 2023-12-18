@@ -5,7 +5,7 @@ import { InputField } from "../../lib/components/inputField";
 export function CustomLayout() {
   const id = "x";
   const type = "text";
-  const error = ["This is error", "This is another error"];
+  const error = ["This field is required.", "This is another error."];
   const onChange = () => {};
   const label = "Label";
 

@@ -12,7 +12,7 @@ interface ErrorProps extends ComponentProps, VariantProps<typeof errorStyles> {}
 export function Error({
   children,
   className,
-  intent = "error",
+  intent,
   size,
   style,
 }: ErrorProps) {

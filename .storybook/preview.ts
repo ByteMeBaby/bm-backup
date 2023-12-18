@@ -16,6 +16,7 @@ const preview: Preview = {
           ["welcome"],
           "Inputfield",
           ["Basic", "Custom Layout", "input element"],
+          "Card",
         ],
       },
     },

@@ -24,6 +24,9 @@ const wrapperStyles = cva("", {
       true: "w-full",
     },
   },
+  defaultVariants: {
+    fullWidth: true,
+  },
 });
 
 type ComponentProps = {
@@ -50,10 +53,10 @@ export interface InputProps
 export function Input({
   type = "text",
   id,
-  intent = "primary",
+  intent,
   placeholder,
   onChange,
-  size = "sm",
+  size,
   inputStyles,
   inputWrapperStyles,
   prefix,
@@ -64,7 +67,7 @@ export function Input({
   postfixWrapperClasses,
   postfixWrapperStyles,
   prefixWrapperStyles,
-  fullWidth = true,
+  fullWidth,
   ...rest
 }: InputProps) {
   return (

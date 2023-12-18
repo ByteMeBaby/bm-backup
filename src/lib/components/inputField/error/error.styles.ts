@@ -21,4 +21,8 @@ export const errorStyles = cva("", {
       "6xl": "text-6xl",
     },
   },
+  defaultVariants: {
+    intent: "error",
+    size: "sm",
+  },
 });

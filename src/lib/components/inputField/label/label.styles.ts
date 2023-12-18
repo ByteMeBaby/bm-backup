@@ -24,4 +24,9 @@ export const label = cva("", {
       true: "font-bold",
     },
   },
+  defaultVariants: {
+    intent: "primary",
+    size: "sm",
+    bold: false,
+  },
 });

@@ -19,10 +19,10 @@ interface InputFieldProps
 export function InputField({
   className,
   children,
-  layout = "col",
-  size = "sm",
+  layout,
+  size,
   style,
-  fullWidth = true,
+  fullWidth,
 }: InputFieldProps) {
   return (
     <div
