@@ -5,7 +5,6 @@ export type ComponentProps = {
   error?: string | string[];
   id?: string;
   wrapperClasses?: string;
-  inputClasses?: string;
   errorWrapperClasses?: string;
   labelClasses?: string;
   intent?: "primary" | "error" | "warning";
@@ -17,6 +16,15 @@ export type ComponentProps = {
   labelStyles: React.CSSProperties;
   inputStyles: React.CSSProperties;
   errorStyles: React.CSSProperties;
+  inputClasses: string;
+  inputWrapperClasses: string;
+  inputWrapperStyles: React.CSSProperties;
+  postfix: React.ReactNode;
+  prefix: React.ReactNode;
+  prefixWrapperClasses: string;
+  postfixWrapperClasses: string;
+  prefixWrapperStyles: React.CSSProperties;
+  postfixWrapperStyles: React.CSSProperties;
 };
 
 export default function Input({
@@ -34,8 +42,16 @@ export default function Input({
   boldLabel,
   labelStyles,
   inputStyles,
+  inputWrapperClasses,
+  inputWrapperStyles,
   errorStyles,
   styles,
+  postfix,
+  prefix,
+  prefixWrapperClasses,
+  postfixWrapperClasses,
+  postfixWrapperStyles,
+  prefixWrapperStyles,
 }: ComponentProps) {
   return (
     <InputField className={`${wrapperClasses}`} style={styles}>
@@ -51,12 +67,20 @@ export default function Input({
       </InputField.Label>
       <InputField.Input
         id={id}
-        className={inputClasses}
+        inputClasses={inputClasses}
+        inputWrapperClasses={inputWrapperClasses}
+        inputWrapperStyles={inputWrapperStyles}
+        inputStyles={inputStyles}
         intent={intent}
         placeholder={placeholder}
         onChange={onChange}
         size={size}
-        style={inputStyles}
+        postfix={postfix}
+        prefix={prefix}
+        prefixWrapperClasses={prefixWrapperClasses}
+        postfixWrapperClasses={postfixWrapperClasses}
+        postfixWrapperStyles={postfixWrapperStyles}
+        prefixWrapperStyles={prefixWrapperStyles}
       />
       {error && (
         <InputField.Error

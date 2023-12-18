@@ -73,6 +73,30 @@ const meta: Meta<typeof Component> = {
       description: "Styles to pass to the wrapper",
       control: { type: "object" },
     },
+    postfix: {
+      description: "The postfix of the input",
+      control: { type: "text" },
+    },
+    postfixWrapperClasses: {
+      description: "Classes to pass to the postfix wrapper",
+      control: { type: "text" },
+    },
+    postfixWrapperStyles: {
+      description: "Styles to pass to the postfix wrapper",
+      control: { type: "object" },
+    },
+    prefix: {
+      description: "The prefix of the input",
+      control: { type: "text" },
+    },
+    prefixWrapperClasses: {
+      description: "Classes to pass to the prefix wrapper",
+      control: { type: "text" },
+    },
+    prefixWrapperStyles: {
+      description: "Styles to pass to the prefix wrapper",
+      control: { type: "object" },
+    },
   },
 };
 
@@ -83,6 +107,9 @@ export const Input: Story = {
     id: "input",
     intent: "primary",
     label: "First Name",
+    wrapperClasses: "w-96",
+    inputClasses: "w-full",
+    size: "lg",
   },
 };
 
@@ -108,28 +135,22 @@ export const ClassNames: Story = {
     labelClasses: "font-bold pr-1",
     errorWrapperClasses: "pl-1 text-yellow-700",
     error: ["This is a warning"],
+    size: "sm",
   },
 };
 
-/**
- * You can pass styles to the wrapper, input and label to override the default styles
- */
-export const Styles: Story = {
+export const PrefixAndPostfix: Story = {
   args: {
     id: "input",
     intent: "primary",
     label: "First Name",
-    styles: { backgroundColor: "red" },
-    inputStyles: { backgroundColor: "blue" },
-    labelStyles: { backgroundColor: "green" },
-    errorStyles: { backgroundColor: "yellow" },
-    error: ["This is a warning"],
-  },
-  argTypes: {
-    styles: { control: { disable: true } },
-    inputStyles: { control: { disable: true } },
-    labelStyles: { control: { disable: true } },
-    errorStyles: { control: { disable: true } },
+    wrapperClasses: "w-96",
+    inputClasses: "w-full pl-16 pr-12",
+    prefix: "https://",
+    prefixWrapperClasses: "text-gray-500 left-2",
+    postfix: ".com",
+    postfixWrapperClasses: "text-gray-500",
+    size: "lg",
   },
 };
 

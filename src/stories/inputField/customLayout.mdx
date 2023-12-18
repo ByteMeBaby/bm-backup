@@ -14,11 +14,27 @@ And change structure as the way you want.
 
 <Source
   language="tsx"
-  code={`<InputField>
-  <InputField.Label htmlFor={id}>{label}</InputField.Label>
-  <InputField.Input id={id} type={type} onChange={onChange} />
-  <InputField.Error>error</InputField.Error>
+  code={`<InputField size={"lg"}>
+  <div className="flex items-center">
+    <InputField.Label htmlFor={id} className="mr-1" size={"sm"}>
+      {label}
+    </InputField.Label>
+    <InputField.Input id={id} type={type} onChange={onChange} />
+  </div>
+  <InputField.Error size={"sm"} className="ml-10 mt-2">
+    {typeof error === "string" && error}
+
+    {Array.isArray(error) && (
+      <ul>
+        {error.map((err) => (
+          <li key={err}>{err}</li>
+        ))}
+      </ul>
+    )}
+
+  </InputField.Error>
 </InputField>`}
+
 />
 
 <Primary />

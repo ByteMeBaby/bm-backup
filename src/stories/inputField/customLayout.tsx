@@ -16,28 +16,29 @@ export function CustomLayout({
   error: string | string[];
 }) {
   return (
-    <div>
-      <InputField>
-        <InputField.Label htmlFor={id}>{label}</InputField.Label>
-        <InputField.Input
-          id={id}
-          type={type}
-          onChange={onChange}
-          prefix="$"
-          postfix=".00"
-        />
-        <InputField.Error>
-          {typeof error === "string" && error}
+    <InputField size={"lg"}>
+      <div className="flex items-center">
+        <InputField.Label
+          htmlFor={id}
+          className="mr-1 text-gray-600"
+          bold
+          size={"sm"}
+        >
+          {label}
+        </InputField.Label>
+        <InputField.Input id={id} type={type} onChange={onChange} />
+      </div>
+      <InputField.Error size={"sm"} className="ml-10 mt-2">
+        {typeof error === "string" && error}
 
-          {Array.isArray(error) && (
-            <ul>
-              {error.map((err) => (
-                <li key={err}>{err}</li>
-              ))}
-            </ul>
-          )}
-        </InputField.Error>
-      </InputField>
-    </div>
+        {Array.isArray(error) && (
+          <ul>
+            {error.map((err) => (
+              <li key={err}>{err}</li>
+            ))}
+          </ul>
+        )}
+      </InputField.Error>
+    </InputField>
   );
 }
