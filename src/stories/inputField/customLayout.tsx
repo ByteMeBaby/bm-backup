@@ -19,7 +19,13 @@ export function CustomLayout({
     <div>
       <InputField>
         <InputField.Label htmlFor={id}>{label}</InputField.Label>
-        <InputField.Input id={id} type={type} onChange={onChange} />
+        <InputField.Input
+          id={id}
+          type={type}
+          onChange={onChange}
+          prefix="$"
+          postfix=".00"
+        />
         <InputField.Error>
           {typeof error === "string" && error}
 

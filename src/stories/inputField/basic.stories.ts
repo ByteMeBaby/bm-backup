@@ -11,10 +11,10 @@ const meta: Meta<typeof Component> = {
   tags: ["autodocs"],
   argTypes: {
     intent: {
-      options: ["primary", "error"],
+      options: ["primary", "error", "warning", "success", "info"],
       control: { type: "radio" },
     },
-    onChange: { action: "onChange" },
+    onChange: { action: "onChange", control: { disable: true } },
     inputClasses: {
       control: { disable: true },
       description: "Classes to pass to the input",
@@ -41,6 +41,37 @@ const meta: Meta<typeof Component> = {
     },
     error: {
       description: "An array of strings or a string to display as an error",
+    },
+    placeholder: {
+      description: "The placeholder of the input",
+      defaultValue: "Enter your first name",
+    },
+    size: {
+      description: "The size of the input",
+      options: ["xs", "sm", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl"],
+      control: { type: "radio" },
+      defaultValue: "sm",
+    },
+    boldLabel: {
+      description: "Whether to bold the label or not",
+      defaultValue: false,
+      control: { type: "boolean" },
+    },
+    labelStyles: {
+      description: "Styles to pass to the label",
+      control: { type: "object" },
+    },
+    inputStyles: {
+      description: "Styles to pass to the input",
+      control: { type: "object" },
+    },
+    errorStyles: {
+      description: "Styles to pass to the error",
+      control: { type: "object" },
+    },
+    styles: {
+      description: "Styles to pass to the wrapper",
+      control: { type: "object" },
     },
   },
 };
@@ -73,10 +104,32 @@ export const ClassNames: Story = {
     intent: "primary",
     label: "First Name",
     wrapperClasses: "flex flex-row items-center",
-    inputClasses: "bg-red-200",
+    inputClasses: "bg-yellow-50",
     labelClasses: "font-bold pr-1",
     errorWrapperClasses: "pl-1 text-yellow-700",
     error: ["This is a warning"],
+  },
+};
+
+/**
+ * You can pass styles to the wrapper, input and label to override the default styles
+ */
+export const Styles: Story = {
+  args: {
+    id: "input",
+    intent: "primary",
+    label: "First Name",
+    styles: { backgroundColor: "red" },
+    inputStyles: { backgroundColor: "blue" },
+    labelStyles: { backgroundColor: "green" },
+    errorStyles: { backgroundColor: "yellow" },
+    error: ["This is a warning"],
+  },
+  argTypes: {
+    styles: { control: { disable: true } },
+    inputStyles: { control: { disable: true } },
+    labelStyles: { control: { disable: true } },
+    errorStyles: { control: { disable: true } },
   },
 };
 
