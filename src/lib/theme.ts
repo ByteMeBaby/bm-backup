@@ -116,4 +116,5 @@ export default {
     900: "#161e2e",
     950: "#0f172a",
   },
+  bm_primary_text: "#4b5563",
 };

@@ -101,6 +101,11 @@ const meta: Meta<typeof Component> = {
       description: "Styles to pass to the prefix wrapper",
       control: { type: "object" },
     },
+    fullWidth: {
+      description: "Whether to make the input full width or not",
+      defaultValue: false,
+      control: { type: "boolean" },
+    },
   },
 };
 
@@ -111,9 +116,8 @@ export const Input: Story = {
     id: "input",
     intent: "primary",
     label: "First Name",
-    wrapperClasses: "w-96",
-    inputClasses: "w-full",
     size: "lg",
+    fullWidth: true,
   },
 };
 
@@ -123,6 +127,8 @@ export const InputError: Story = {
     intent: "error",
     label: "First Name",
     error: ["First name is required", "This is another error"],
+    inputWrapperClasses: "",
+    inputClasses: "",
   },
 };
 
@@ -140,6 +146,7 @@ export const ClassNames: Story = {
     errorWrapperClasses: "pl-1 text-yellow-700",
     error: ["This is a warning"],
     size: "sm",
+    fullWidth: false,
   },
 };
 
@@ -148,8 +155,8 @@ export const PrefixAndPostfix: Story = {
     id: "input",
     intent: "primary",
     label: "First Name",
-    wrapperClasses: "w-96",
-    inputClasses: "w-full pl-16 pr-12",
+    wrapperClasses: "",
+    inputClasses: "pl-16 pr-12",
     prefix: "https://",
     prefixWrapperClasses: "text-gray-500 left-2",
     postfix: ".com",

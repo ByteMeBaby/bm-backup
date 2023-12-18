@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 export const label = cva("", {
   variants: {
     intent: {
-      primary: "text-bm_gray-900",
+      primary: "",
       error: "text-bm_danger-500 ",
       warning: "text-bm_warning-500",
       success: "text-bm_success-500",

@@ -18,6 +18,14 @@ const prefixPostfixSizes = cva("", {
   },
 });
 
+const wrapperStyles = cva("", {
+  variants: {
+    fullWidth: {
+      true: "w-full",
+    },
+  },
+});
+
 type ComponentProps = {
   id: string;
   type?: string;
@@ -56,14 +64,15 @@ export function Input({
   postfixWrapperClasses,
   postfixWrapperStyles,
   prefixWrapperStyles,
+  fullWidth = true,
   ...rest
 }: InputProps) {
   return (
     <div
       className={twMerge(
         "flex items-center relative",
-        prefixPostfixSizes({
-          size,
+        wrapperStyles({
+          fullWidth,
         }),
         inputWrapperClasses
       )}
@@ -71,7 +80,13 @@ export function Input({
     >
       {prefix && (
         <div
-          className={twMerge("absolute left-4", prefixWrapperClasses)}
+          className={twMerge(
+            "absolute left-4",
+            prefixPostfixSizes({
+              size,
+            }),
+            prefixWrapperClasses
+          )}
           style={prefixWrapperStyles}
         >
           {prefix}
@@ -82,6 +97,7 @@ export function Input({
           input({
             intent,
             size,
+            fullWidth,
           }),
           inputClasses
         )}

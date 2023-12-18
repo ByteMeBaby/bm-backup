@@ -22,6 +22,7 @@ export function InputField({
   layout = "col",
   size = "sm",
   style,
+  fullWidth = true,
 }: InputFieldProps) {
   return (
     <div
@@ -29,6 +30,7 @@ export function InputField({
         inputField({
           layout,
           size,
+          fullWidth,
         }),
         className
       )}

@@ -17,5 +17,8 @@ export const inputField = cva("", {
       "5xl": "text-5xl",
       "6xl": "text-6xl",
     },
+    fullWidth: {
+      true: "w-full",
+    },
   },
 });

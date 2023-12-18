@@ -25,11 +25,7 @@ const meta: Meta<typeof CustomLayout> = {
 type Story = StoryObj<typeof meta>;
 
 export const Input: Story = {
-  args: {
-    label: "Label",
-    id: "input",
-    type: "text",
-  },
+  args: {},
 };
 
 export default meta;

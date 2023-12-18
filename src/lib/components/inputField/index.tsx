@@ -25,6 +25,7 @@ export type ComponentProps = {
   postfixWrapperClasses?: string;
   prefixWrapperStyles?: React.CSSProperties;
   postfixWrapperStyles?: React.CSSProperties;
+  fullWidth: boolean;
 };
 
 export default function Input({
@@ -52,9 +53,14 @@ export default function Input({
   postfixWrapperClasses,
   postfixWrapperStyles,
   prefixWrapperStyles,
+  fullWidth = true,
 }: ComponentProps) {
   return (
-    <InputField className={`${wrapperClasses}`} style={styles}>
+    <InputField
+      className={`${wrapperClasses}`}
+      style={styles}
+      fullWidth={fullWidth}
+    >
       <InputField.Label
         size={size}
         className={labelClasses}
@@ -81,6 +87,7 @@ export default function Input({
         postfixWrapperClasses={postfixWrapperClasses}
         postfixWrapperStyles={postfixWrapperStyles}
         prefixWrapperStyles={prefixWrapperStyles}
+        fullWidth={fullWidth}
       />
       {error && (
         <InputField.Error

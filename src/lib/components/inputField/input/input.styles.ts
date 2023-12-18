@@ -24,5 +24,8 @@ export const input = cva("focus:ring-1 focus:outline-none focus:ring-inset", {
       "5xl": "text-5xl px-7 py-5",
       "6xl": "text-6xl px-8 py-6",
     },
+    fullWidth: {
+      true: "w-full",
+    },
   },
 });

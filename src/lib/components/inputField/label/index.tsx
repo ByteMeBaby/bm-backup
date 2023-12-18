@@ -1,5 +1,6 @@
 import { VariantProps } from "class-variance-authority";
 import { label } from "./label.styles";
+import { Text } from "../../text";
 
 export type ComponentProps = {
   children: React.ReactNode;
@@ -22,7 +23,8 @@ export function Label({
   style,
 }: LabelProps) {
   return (
-    <label
+    <Text
+      el="label"
       className={`${label({
         intent,
         size,
@@ -32,6 +34,6 @@ export function Label({
       style={style}
     >
       {children}
-    </label>
+    </Text>
   );
 }

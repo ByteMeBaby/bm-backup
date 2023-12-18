@@ -53,8 +53,8 @@ export type Story = StoryObj<typeof meta>;
 
 export const Input: Story = {
   args: {
-    inputWrapperClasses: "w-96",
-    inputClasses: "w-full",
+    inputWrapperClasses: "",
+    inputClasses: "",
     size: "lg",
   },
 };
@@ -65,8 +65,8 @@ export const Prefix: Story = {
     prefixWrapperClasses: "text-gray-500 left-2",
     postfix: ".com",
     postfixWrapperClasses: "text-gray-500",
-    inputClasses: "w-full pl-16 pr-12",
-    inputWrapperClasses: "w-96",
+    inputClasses: "pl-16 pr-12",
+    inputWrapperClasses: "",
     size: "lg",
   },
 };

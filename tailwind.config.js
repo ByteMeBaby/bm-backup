@@ -15,6 +15,7 @@ export default {
         bm_light: theme.bm_light,
         bm_dark: theme.bm_dark,
         bm_border: theme.bm_border,
+        bm_primary_text: theme.bm_primary_text,
       },
     },
   },
