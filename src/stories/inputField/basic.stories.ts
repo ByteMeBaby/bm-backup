@@ -10,7 +10,7 @@ const meta: Meta<typeof Component> = {
   component: Component,
   title: "Inputfield/Basic",
   parameters: {
-    layout: "centered",
+    layout: "padded",
   },
   tags: ["autodocs"],
   argTypes: {
@@ -116,7 +116,7 @@ export const Input: Story = {
     id: "input",
     intent: "primary",
     label: "First Name",
-    size: "lg",
+    size: "sm",
     fullWidth: true,
   },
 };
@@ -148,6 +148,9 @@ export const ClassNames: Story = {
     size: "sm",
     fullWidth: false,
   },
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export const PrefixAndPostfix: Story = {
@@ -156,12 +159,15 @@ export const PrefixAndPostfix: Story = {
     intent: "primary",
     label: "First Name",
     wrapperClasses: "",
-    inputClasses: "pl-16 pr-12",
+    inputClasses: "pl-14 pr-10",
     prefix: "https://",
     prefixWrapperClasses: "text-gray-500 left-2",
     postfix: ".com",
     postfixWrapperClasses: "text-gray-500",
-    size: "lg",
+    size: "sm",
+  },
+  parameters: {
+    layout: "centered",
   },
 };
 

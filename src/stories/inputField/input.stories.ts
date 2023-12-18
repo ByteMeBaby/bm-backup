@@ -55,7 +55,7 @@ export const Input: Story = {
   args: {
     inputWrapperClasses: "",
     inputClasses: "",
-    size: "lg",
+    size: "sm",
   },
 };
 
@@ -65,9 +65,9 @@ export const Prefix: Story = {
     prefixWrapperClasses: "text-gray-500 left-2",
     postfix: ".com",
     postfixWrapperClasses: "text-gray-500",
-    inputClasses: "pl-16 pr-12",
+    inputClasses: "pl-14 pr-10",
     inputWrapperClasses: "",
-    size: "lg",
+    size: "sm",
   },
 };
 
