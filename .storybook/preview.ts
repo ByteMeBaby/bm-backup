@@ -11,7 +11,12 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ["Inputfield", ["Basic", "Custom Layout", "input element"]],
+        order: [
+          "stories",
+          ["welcome"],
+          "Inputfield",
+          ["Basic", "Custom Layout", "input element"],
+        ],
       },
     },
   },

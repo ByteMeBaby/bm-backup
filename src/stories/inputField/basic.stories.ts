@@ -1,6 +1,6 @@
 import Component from "../../lib/components/inputField";
 import { Meta, StoryObj } from "@storybook/react";
-// import "../../index.css";
+import "../../index.css";
 
 /**
  * This is a wrapper component around Input, Label and Error compound components.
