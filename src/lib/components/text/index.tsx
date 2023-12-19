@@ -13,7 +13,7 @@ interface LabelProps extends BaseProps {
 }
 
 interface OtherProps extends BaseProps {
-  el: "p" | "h1" | "h2" | "span";
+  el: "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "div" | "li";
   htmlFor?: never;
 }
 
