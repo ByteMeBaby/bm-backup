@@ -11,8 +11,8 @@ export function CustomLayout() {
 
   return (
     <>
-      <p className="mb-10 text-gray-700">
-        Please look at the documentation for more information.
+      <p className="mb-10 text-blue-800 bg-blue-50 p-2 rounded">
+        Please use the code from the documentation.
       </p>
       <InputField size={"lg"}>
         <div className="flex items-center">

@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import "../../index.css";
 
 /**
- * This is a wrapper component around Input, Label and Error compound components.
+ * This is a wrapper component around Input, Label and Error compound components. If you need more control over the layout strucure have a look at Custom layout.
  *
  */
 const meta: Meta<typeof Component> = {

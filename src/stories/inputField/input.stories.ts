@@ -4,7 +4,7 @@ import "../../index.css";
 
 const meta: Meta<typeof Component> = {
   component: Component,
-  title: "Inputfield/input element",
+  title: "Inputfield/elements/Input",
   tags: ["autodocs"],
   parameters: {
     layout: "centered",

@@ -6,8 +6,6 @@ export const errorStyles = cva("", {
       primary: "text-bm_primary-500",
       warning: "text-bm_warning-500",
       error: "text-bm_danger-500 text",
-      success: "text-bm_success-500",
-      info: "text-bm_info-500",
     },
     size: {
       xs: "text-xs",
