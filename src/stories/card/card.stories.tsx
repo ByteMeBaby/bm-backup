@@ -16,15 +16,62 @@ const meta: Meta<typeof Component> = {
         disable: true,
       },
     },
+    title: {
+      control: {
+        type: "text",
+      },
+      description: "Card title",
+    },
+    actions: {
+      control: {
+        disable: true,
+      },
+      description: "Card actions. These will be rendered in the footer",
+    },
+    actionAlignment: {
+      control: {
+        type: "select",
+        options: ["left", "right", "evenly", "between"],
+      },
+      description:
+        "If you want to align actions in a single container then use this prop. To use this you have to pass `false` to multiContainerActions prop",
+    },
+    actionWrapperClasses: {
+      control: {
+        type: "text",
+      },
+      description: "Actions ",
+    },
+    multiContainerActions: {
+      control: {
+        type: "boolean",
+      },
+      description:
+        "If you want to align actions in multiple containers, separate from each other using the borders and align them in the middle of each container then use this prop",
+    },
   },
 };
 
 type Story = StoryObj<typeof meta>;
 
+const FakeButton = ({ key }: { key: string }) => (
+  <button
+    key={key}
+    className="btn btn-primary bg-blue-600 text-white text-sm px-3 py-1 rounded"
+  >
+    Fake button
+  </button>
+);
+
 export const Basic: Story = {
   args: {
     title: "This is title",
     children: <div className="p-3">This is card body</div>,
+    actions: [
+      ...Array(3)
+        .fill(null)
+        .map((_, i) => <FakeButton key={`button-${i}`} />),
+    ],
   },
 };
 
