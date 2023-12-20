@@ -18,6 +18,7 @@ type ComponentProps = {
   actionAlignment?: "left" | "right" | "evenly" | "between";
   actionWrapperClasses?: string;
   multiContainerActions?: boolean;
+  loading?: boolean;
 };
 
 interface CardProps extends ComponentProps, VariantProps<typeof card> {}
@@ -31,13 +32,20 @@ export function Card({
   actionWrapperClasses,
   actionAlignment = "evenly",
   multiContainerActions = true,
+  loading = false,
   ...rest
 }: CardProps) {
+  if (loading) {
+    return (
+      <div className={twMerge(card({}), className)} style={style} {...rest}>
+        <ShimmerLoader />
+      </div>
+    );
+  }
   return (
     <div className={twMerge(card({}), className)} style={style} {...rest}>
       {title && <Heading el="header">{title}</Heading>}
       {children}
-      <ShimmerLoader />
       {actions && (
         <Footer
           multiContainer={multiContainerActions}

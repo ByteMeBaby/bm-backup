@@ -66,7 +66,12 @@ const FakeButton = ({ key }: { key: string }) => (
 export const Basic: Story = {
   args: {
     title: "This is title",
-    children: <div className="p-3">This is card body</div>,
+    children: (
+      <div className="p-3 text-gray-600 text-sm">
+        To actionAlignment to work you have to pass false to
+        multiContainerActions prop.
+      </div>
+    ),
     actions: [
       ...Array(3)
         .fill(null)
