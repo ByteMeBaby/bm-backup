@@ -17,6 +17,8 @@ const preview: Preview = {
           "Inputfield",
           ["Basic", "Custom Layout", "input element"],
           "Card",
+          "loader",
+          ["Shimmer"],
         ],
       },
     },

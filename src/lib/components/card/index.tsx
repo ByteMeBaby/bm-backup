@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 import { Heading } from "./heading";
 import { Body } from "./body";
 import { Footer } from "./footer";
+import { ShimmerLoader } from "../loader/shimmer";
 
 const card = cva("shadow rounded box-border", {
   variants: {},
@@ -36,6 +37,7 @@ export function Card({
     <div className={twMerge(card({}), className)} style={style} {...rest}>
       {title && <Heading el="header">{title}</Heading>}
       {children}
+      <ShimmerLoader />
       {actions && (
         <Footer
           multiContainer={multiContainerActions}
