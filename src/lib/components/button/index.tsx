@@ -6,6 +6,7 @@ type ComponentProps = {
   children: React.ReactNode;
   loading?: boolean;
   loadingIcon?: React.ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 interface ButtonProps extends ComponentProps, VariantProps<typeof button> {}
@@ -57,7 +58,8 @@ export function Button({
   loading,
   bold,
   loadingIcon,
-  reverseItems,
+  onClick,
+  reverseItems = false,
   ...rest
 }: ButtonProps) {
   return (
@@ -73,8 +75,9 @@ export function Button({
           reverseItems,
         })
       )}
+      onClick={onClick}
+      disabled={!!disabled}
       {...rest}
-      disabled
     >
       {loading && <LoadingSpinnerSvg loadingIcon={loadingIcon} size={size} />}
       <span className={reverseItems ? "mr-1" : "ml-1"}>{children}</span>

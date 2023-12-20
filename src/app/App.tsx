@@ -1,11 +1,16 @@
 import "./App.css";
-import Input from "../../src/lib/components/inputField";
+import { Button } from "../lib/components/button";
 import React from "react";
 
 function App() {
+  function handleClick() {
+    console.log("click");
+  }
   return (
     <>
-      <Input id="input" label="" />
+      <Button disabled onClick={handleClick}>
+        click
+      </Button>
     </>
   );
 }
