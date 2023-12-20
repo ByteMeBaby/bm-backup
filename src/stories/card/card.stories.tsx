@@ -2,6 +2,7 @@ import React from "react";
 import { Card as Component } from "../../lib/components/card";
 import { Meta, StoryObj } from "@storybook/react";
 import "../../index.css";
+import { Button } from "../../lib/components/button";
 
 const meta: Meta<typeof Component> = {
   component: Component,
@@ -54,15 +55,6 @@ const meta: Meta<typeof Component> = {
 
 type Story = StoryObj<typeof meta>;
 
-const FakeButton = ({ key }: { key: string }) => (
-  <button
-    key={key}
-    className="btn btn-primary bg-blue-600 text-white text-sm px-3 py-1 rounded"
-  >
-    Fake button
-  </button>
-);
-
 export const Basic: Story = {
   args: {
     title: "This is title",
@@ -75,7 +67,7 @@ export const Basic: Story = {
     actions: [
       ...Array(3)
         .fill(null)
-        .map((_, i) => <FakeButton key={`button-${i}`} />),
+        .map((_, i) => <Button key={"button_" + i}>Button</Button>),
     ],
   },
 };
