@@ -16,7 +16,7 @@ export function CustomLayout() {
         </a>
         .
       </div>
-      <Card className="min-w-full">
+      <Card>
         <Card.Heading el="h1">Title goes here</Card.Heading>
         <Card.Body el="div" wrapperClasses="p-3 flex flex-col items-center">
           <img

@@ -16,9 +16,33 @@ And change structure as the way you want.
 
 <Source
   language="tsx"
-  code={`<Card className=" min-w-full">
-  <Card.Heading el="h1">Title here</Card.Heading>
-  <Card.Body el="div">This is card body</Card.Body>
+  code={`<Card>
+  <Card.Heading el="h1">Title goes here</Card.Heading>
+  <Card.Body el="div" wrapperClasses="p-3 flex flex-col items-center">
+    <img
+      width={400}
+      src="https://cdn.pixabay.com/photo/2023/09/24/14/05/dog-8272860_1280.jpg"
+      alt="Image from pixabay"
+    />
+  </Card.Body>
+  <Card.Footer
+    actions={[
+      <span className="text-blue-600">
+        <a href="https://pixabay.com/photos/dog-puppy-golden-retriever-pet-8272860/">
+          Credits: emiliaxd
+        </a>
+      </span>,
+      <span className="text-sm text-gray-500">Tommy</span>,
+      <span className="text-sm text-gray-500">3 Months</span>,
+      <span className="text-sm text-gray-500">Goldie</span>,
+    ]}
+    wrapperClasses="justify-evenly"
+  >
+    <div className="flex justify-evenly border-t p-3">
+      <Button>Pet Him</Button>
+      <Button intent={"success"}>Feed Him</Button>
+    </div>
+  </Card.Footer>
 </Card>`}
 
 />
