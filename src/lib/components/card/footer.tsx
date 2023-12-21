@@ -12,7 +12,7 @@ interface FooterProps {
   style?: React.CSSProperties;
 }
 
-export function Footer({
+export default function Footer({
   children,
   actionWrapperClasses,
   align = "evenly",
