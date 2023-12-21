@@ -19,6 +19,11 @@ type ComponentProps = {
   actionWrapperClasses?: string;
   multiContainerActions?: boolean;
   loading?: boolean;
+  bodyWrapperClasses?: string;
+  headerWrapperClasses?: string;
+  headerStyles?: React.CSSProperties;
+  bodyStyles?: React.CSSProperties;
+  footerStyles?: React.CSSProperties;
 };
 
 interface CardProps extends ComponentProps, VariantProps<typeof card> {}
@@ -33,27 +38,43 @@ export function Card({
   actionAlignment = "evenly",
   multiContainerActions = true,
   loading = false,
+  bodyWrapperClasses,
+  headerWrapperClasses,
+  headerStyles,
+  bodyStyles,
+  footerStyles,
   ...rest
 }: CardProps) {
   if (loading) {
     return (
-      <div className={twMerge(card({}), className)} style={style} {...rest}>
+      <div className={twMerge(className)} style={style} {...rest}>
         <ShimmerLoader />
       </div>
     );
   }
   return (
     <div className={twMerge(card({}), className)} style={style} {...rest}>
-      {title && <Heading el="header">{title}</Heading>}
-      {children}
+      {title && (
+        <Heading
+          el="header"
+          wrapperClasses={headerWrapperClasses}
+          style={headerStyles}
+        >
+          {title}
+        </Heading>
+      )}
+      <Body el="div" wrapperClasses={bodyWrapperClasses} style={bodyStyles}>
+        {children}
+      </Body>
       {actions && (
         <Footer
+          el="footer"
           multiContainer={multiContainerActions}
-          wrapperClasses={actionWrapperClasses}
+          actionWrapperClasses={actionWrapperClasses}
           align={actionAlignment}
-        >
-          {actions}
-        </Footer>
+          actions={actions}
+          style={footerStyles}
+        />
       )}
     </div>
   );

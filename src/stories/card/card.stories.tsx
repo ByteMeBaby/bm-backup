@@ -79,10 +79,10 @@ export const Basic: Story = {
 export const CustomLayout: Story = {
   args: {
     children: (
-      <div className=" min-w-full">
+      <Component className="min-w-full">
         <Component.Heading el="h1">Title here</Component.Heading>
         <Component.Body el="div">This is card body</Component.Body>
-      </div>
+      </Component>
     ),
   },
 };

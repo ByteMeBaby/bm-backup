@@ -1,51 +1,59 @@
-// Footer.tsx
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
 interface FooterProps {
-  children: React.ReactNode;
-  wrapperClasses?: string;
+  children?: React.ReactNode;
+  actionWrapperClasses?: string;
   align?: "left" | "right" | "evenly" | "between";
   multiContainer?: boolean;
+  actions?: React.ReactNode;
+  wrapperClasses?: string;
+  el?: "footer" | "div" | "header" | "aside" | "span";
+  style?: React.CSSProperties;
 }
 
 export function Footer({
   children,
-  wrapperClasses,
+  actionWrapperClasses,
   align = "evenly",
   multiContainer = false,
+  actions,
+  wrapperClasses,
+  style,
+  el: El = "footer",
 }: FooterProps) {
   if (multiContainer) {
-    const childrenArray = React.Children.toArray(children);
+    const childrenArray = React.Children.toArray(actions);
     const numChildren = childrenArray.length;
 
     return (
-      <div className={twMerge("flex w-full", wrapperClasses)}>
-        {childrenArray.map((child, index) => {
-          // Gen class names based on the child's position
-          let borderClasses = "border-t p-3";
+      <El className={twMerge(wrapperClasses)} style={style}>
+        <div className={twMerge("flex w-full", actionWrapperClasses)}>
+          {childrenArray.map((child, index) => {
+            let borderClasses = "border-t p-3";
 
-          // Add right border except for the last child
-          if (index !== numChildren - 1) {
-            borderClasses += " border-r";
-          }
+            if (index !== numChildren - 1) {
+              borderClasses += " border-r";
+            }
 
-          return (
-            <div
-              key={index}
-              className={twMerge(
-                "flex flex-1 justify-center items-center",
-                borderClasses
-              )}
-            >
-              {child}
-            </div>
-          );
-        })}
-      </div>
+            return (
+              <div
+                key={index}
+                className={twMerge(
+                  "flex flex-1 justify-center items-center",
+                  borderClasses
+                )}
+              >
+                {child}
+              </div>
+            );
+          })}
+        </div>
+        {children}
+      </El>
     );
   }
-  // Single container
+
   const justifyContentClass = {
     left: "justify-start",
     right: "justify-end",
@@ -53,29 +61,32 @@ export function Footer({
     between: "justify-between",
   }[align];
 
-  const childrenArray = React.Children.toArray(children);
+  const childrenArray = React.Children.toArray(actions);
   const numChildren = childrenArray.length;
 
   return (
-    <div
-      className={twMerge(
-        `flex w-full ${justifyContentClass} items-center p-3 border-t`,
-        wrapperClasses
-      )}
-    >
-      {childrenArray.map((child, index) => {
-        let marginClass = "";
-        if (align === "left" && index < numChildren - 1) {
-          marginClass = "mr-2"; // Adjust margin as needed
-        } else if (align === "right" && index > 0) {
-          marginClass = "ml-2"; // Adjust margin as needed
-        }
-        return (
-          <div key={index} className={twMerge(marginClass)}>
-            {child}
-          </div>
-        );
-      })}
-    </div>
+    <El className={twMerge(wrapperClasses)} style={style}>
+      <div
+        className={twMerge(
+          `flex w-full ${justifyContentClass} items-center p-3 border-t`,
+          actionWrapperClasses
+        )}
+      >
+        {childrenArray.map((child, index) => {
+          let marginClass = "";
+          if (align === "left" && index < numChildren - 1) {
+            marginClass = "mr-2";
+          } else if (align === "right" && index > 0) {
+            marginClass = "ml-2";
+          }
+          return (
+            <div key={index} className={twMerge(marginClass)}>
+              {child}
+            </div>
+          );
+        })}
+      </div>
+      {children}
+    </El>
   );
 }

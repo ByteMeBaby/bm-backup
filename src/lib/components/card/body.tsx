@@ -1,9 +1,8 @@
-import { twMerge } from "tailwind-merge";
-
 export function Body({
   el: El = "div",
   children,
   wrapperClasses,
+  style,
 }: {
   el:
     | "h1"
@@ -20,6 +19,11 @@ export function Body({
     | "p";
   children?: React.ReactNode;
   wrapperClasses?: string;
+  style?: React.CSSProperties;
 }) {
-  return <El className={twMerge("p-3", wrapperClasses)}>{children}</El>;
+  return (
+    <El style={style} className={wrapperClasses}>
+      {children}
+    </El>
+  );
 }

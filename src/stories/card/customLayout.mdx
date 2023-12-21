@@ -1,0 +1,28 @@
+import { Meta, Primary, Source, Controls } from "@storybook/blocks";
+import * as componentStories from "./customLayout.stories";
+
+<Meta of={componentStories} />
+
+**If you need more control over the structure of the `Card` component, you can do that by using compound component. Have a look at the example below.**
+
+First import the `Card` component.
+
+<Source
+  language="tsx"
+  code={`import {InputField} from '@metalnet/baremetal/input';`}
+/>
+
+And change structure as the way you want.
+
+<Source
+  language="tsx"
+  code={`<Card className=" min-w-full">
+  <Card.Heading el="h1">Title here</Card.Heading>
+  <Card.Body el="div">This is card body</Card.Body>
+</Card>`}
+
+/>
+
+<Primary />
+<Controls />
+```

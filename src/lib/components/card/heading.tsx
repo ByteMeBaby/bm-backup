@@ -4,6 +4,7 @@ export function Heading({
   el: El = "div",
   children,
   wrapperClasses,
+  style,
 }: {
   el:
     | "h1"
@@ -20,9 +21,13 @@ export function Heading({
     | "p";
   children?: React.ReactNode;
   wrapperClasses?: string;
+  style?: React.CSSProperties;
 }) {
   return (
-    <El className={twMerge("text-2xl border-b p-3", wrapperClasses)}>
+    <El
+      className={twMerge("text-2xl border-b p-3", wrapperClasses)}
+      style={style}
+    >
       {children}
     </El>
   );
