@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Component from "../../lib/components/button";
+import Button from "../../lib/components/button";
 import "../../index.css";
 import React from "react";
 
-const meta: Meta<typeof Component> = {
-  component: Component,
+const meta: Meta<typeof Button> = {
+  component: Button,
   title: "Button/Basic",
   parameters: {
     layout: "padded",

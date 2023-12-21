@@ -1,7 +1,7 @@
 import React from "react";
 import "../../index.css";
 import { Card } from "../../lib/components/card";
-import { Button } from "../../lib/components/button";
+import Button from "../../lib/components/button";
 
 export function CustomLayout() {
   return (

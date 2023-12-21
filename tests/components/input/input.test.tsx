@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react";
-import Input, { InputField } from "../../src/lib/components/inputField";
+import Input, { InputField } from "../../../src/lib/components/inputField";
 
 describe("Basic input", () => {
   it("renders a input component", () => {
