@@ -2,7 +2,7 @@ import React from "react";
 import { Card as Component } from "../../lib/components/card";
 import { Meta, StoryObj } from "@storybook/react";
 import "../../index.css";
-import { Button } from "../../lib/components/button";
+import Button from "../../lib/components/button";
 
 const meta: Meta<typeof Component> = {
   component: Component,

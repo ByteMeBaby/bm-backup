@@ -25,7 +25,7 @@ export type ComponentProps = {
   postfixWrapperClasses?: string;
   prefixWrapperStyles?: React.CSSProperties;
   postfixWrapperStyles?: React.CSSProperties;
-  fullWidth: boolean;
+  fullWidth?: boolean;
 };
 
 export default function Input({

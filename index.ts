@@ -1,1 +1,1 @@
-export { Test } from "./src/lib/component";
+export { default as Button } from "./src/lib/components/button";

@@ -1,19 +1,21 @@
 import { VariantProps } from "class-variance-authority";
 import { button } from "./button.styles";
 import { twMerge } from "tailwind-merge";
-import { Spinner } from "../loader/spinner";
-import { MouseEvent, ReactNode } from "react";
+import { Spinner } from "../loader/spinner"; // Use default export if applicable
+import { ReactNode, MouseEvent } from "react";
 
-type ComponentProps = {
+interface ButtonProps
+  extends VariantProps<typeof button>,
+    Omit<React.HTMLProps<HTMLButtonElement>, "disabled" | "size"> {
   children: React.ReactNode;
   loading?: boolean;
-  loadingIcon?: ReactNode;
+  loadingIcon?: ReactNode | string;
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
-};
+  style?: React.CSSProperties;
+  type?: "submit" | "reset" | "button";
+}
 
-interface ButtonProps extends ComponentProps, VariantProps<typeof button> {}
-
-export function Button({
+function Button({
   children,
   intent,
   size,
@@ -24,8 +26,12 @@ export function Button({
   loadingIcon,
   onClick,
   reverseItems = false,
+  style,
+  type,
   ...rest
 }: ButtonProps) {
+  const isDisabled = disabled || loading;
+
   return (
     <button
       className={twMerge(
@@ -33,15 +39,17 @@ export function Button({
         button({
           intent,
           size,
-          disabled,
+          disabled: isDisabled,
           rounded,
           bold,
           reverseItems,
         })
       )}
       onClick={onClick}
-      disabled={!!disabled}
-      aria-disabled={loading ? "true" : "false"}
+      disabled={isDisabled}
+      aria-disabled={loading}
+      style={style}
+      type={type}
       {...rest}
     >
       {loading && <Spinner loadingIcon={loadingIcon} size={size} />}
@@ -49,3 +57,5 @@ export function Button({
     </button>
   );
 }
+
+export default Button;

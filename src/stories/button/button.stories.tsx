@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Button as Component } from "../../lib/components/button";
+import Component from "../../lib/components/button";
 import "../../index.css";
 import React from "react";
 
