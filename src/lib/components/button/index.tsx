@@ -9,7 +9,6 @@ type ComponentProps = {
   loading?: boolean;
   loadingIcon?: ReactNode;
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
-  showChildrenWhenLoading?: boolean;
 };
 
 interface ButtonProps extends ComponentProps, VariantProps<typeof button> {}

@@ -88,13 +88,17 @@ export const Basic: StoryObj<typeof meta> = {
   },
 };
 
-export const Loading: StoryObj<typeof meta> = {
+/**
+ * You can use reverseItems prop to reverse the order of the icon and text.
+ */
+export const LoadingIconAndPlacement: StoryObj<typeof meta> = {
   args: {
     children: "Loading...",
     intent: "primary",
     size: "sm",
     rounded: "sm",
     loading: true,
+    reverseItems: true,
     loadingIcon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
