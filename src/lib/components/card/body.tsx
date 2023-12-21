@@ -1,4 +1,4 @@
-export function Body({
+export default function Body({
   el: El = "div",
   children,
   wrapperClasses,
@@ -15,7 +15,8 @@ export function Body({
     | "span"
     | "div"
     | "aside"
-    | "header"
+    | "main"
+    | "section"
     | "p";
   children?: React.ReactNode;
   wrapperClasses?: string;

@@ -1,7 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
-import { Heading } from "./heading";
-import { Body } from "./body";
+import Heading from "./heading";
+import Body from "./body";
 import { Footer } from "./footer";
 import { ShimmerLoader } from "../loader/shimmer";
 

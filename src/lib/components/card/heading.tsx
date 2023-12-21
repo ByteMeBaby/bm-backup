@@ -1,11 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
-export function Heading({
-  el: El = "div",
-  children,
-  wrapperClasses,
-  style,
-}: {
+type ComponentProps = {
   el:
     | "h1"
     | "h2"
@@ -22,13 +17,26 @@ export function Heading({
   children?: React.ReactNode;
   wrapperClasses?: string;
   style?: React.CSSProperties;
-}) {
+  className?: string;
+  wrapperStyle?: React.CSSProperties;
+};
+
+export default function Heading({
+  el: El = "div",
+  children,
+  wrapperClasses,
+  className,
+  style,
+  wrapperStyle,
+}: ComponentProps) {
   return (
-    <El
-      className={twMerge("text-2xl border-b p-3", wrapperClasses)}
-      style={style}
+    <div
+      className={twMerge("border-b p-3", wrapperClasses)}
+      style={wrapperStyle}
     >
-      {children}
-    </El>
+      <El className={className} style={style}>
+        {children}
+      </El>
+    </div>
   );
 }

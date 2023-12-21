@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Button from "../../../src/lib/components/button";
 import { vi } from "vitest";
+import { axe } from "jest-axe";
 
 describe("Button", () => {
   it("renders properly when props are passed", () => {
@@ -43,5 +44,11 @@ describe("Button", () => {
     expect(button).toBeDisabled();
     fireEvent.click(button);
     expect(handleClick).not.toHaveBeenCalled();
+  });
+
+  it("has correct accessibility", async () => {
+    const { container } = render(<Button>Button</Button>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
