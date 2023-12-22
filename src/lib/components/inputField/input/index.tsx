@@ -44,6 +44,7 @@ type ComponentProps = {
   postfixWrapperClasses?: string;
   postfixWrapperStyles?: React.CSSProperties;
   prefixWrapperStyles?: React.CSSProperties;
+  inputRef?: React.Ref<HTMLInputElement>;
 };
 
 export interface InputProps
@@ -68,6 +69,7 @@ export function Input({
   postfixWrapperStyles,
   prefixWrapperStyles,
   fullWidth,
+  inputRef,
   ...rest
 }: InputProps) {
   return (
@@ -109,6 +111,7 @@ export function Input({
         placeholder={placeholder}
         onChange={onChange}
         style={inputStyles}
+        ref={inputRef}
         {...rest}
       />
       {postfix && (

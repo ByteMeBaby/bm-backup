@@ -1,31 +1,18 @@
+import { createRef } from "react";
+import { Input } from "../../../src/lib/components/inputField/input";
 import { screen, render } from "@testing-library/react";
-import Input, { InputField } from "../../../src/lib/components/inputField";
 
-describe("Basic input", () => {
-  it("renders a input component", () => {
-    render(<Input label="textbox" id="input" />);
+describe("InputField", () => {
+  it("should render correctly", () => {
+    const ref = createRef<HTMLInputElement>();
 
-    expect(screen.getByLabelText("textbox")).toBeInTheDocument();
-  });
-});
+    render(<Input id="id" inputRef={ref} />);
 
-describe("Compound component", () => {
-  it("renders a compound component", () => {
-    const label = "Label";
-    const id = "input";
+    expect(screen.getByRole("textbox")).toBeInTheDocument();
 
-    render(
-      <InputField>
-        <InputField.Label htmlFor={id}>{label}</InputField.Label>
-        <InputField.Input id={id} />
-        <InputField.Error>error</InputField.Error>
-      </InputField>
-    );
-
-    const input = screen.getByLabelText(label);
-    expect(input).toBeInTheDocument();
-
-    input.focus();
-    expect(input).toHaveFocus();
+    ref.current?.focus();
+    expect(ref.current).toHaveFocus();
+    ref.current?.blur();
+    expect(ref.current).not.toHaveFocus();
   });
 });
