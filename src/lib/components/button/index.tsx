@@ -55,7 +55,9 @@ function Button({
       {...rest}
     >
       {loading && <Spinner loadingIcon={loadingIcon} size={size} />}
-      <span className={reverseItems ? "mr-1" : "ml-1"}>{children}</span>
+      <span className={loadingIcon ? (reverseItems ? "mr-1" : "ml-1") : ""}>
+        {children}
+      </span>
     </button>
   );
 }

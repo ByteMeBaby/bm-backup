@@ -3,6 +3,23 @@ import Button from "../../lib/components/button";
 import "../../index.css";
 import React from "react";
 
+const LoadingIconComp = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    data-slot="icon"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
+    />
+  </svg>
+);
+
 const meta: Meta<typeof Button> = {
   component: Button,
   title: "Button/Basic",
@@ -89,49 +106,61 @@ const meta: Meta<typeof Button> = {
 export const Basic: StoryObj<typeof meta> = {
   args: {
     children: "Click me",
-    intent: "primary",
-    size: "sm",
-    rounded: "sm",
   },
 };
 
 /**
  * You can use reverseItems prop to reverse the order of the icon and text.
  */
-export const LoadingIconAndPlacement: StoryObj<typeof meta> = {
+export const LoadingIcon: StoryObj<typeof meta> = {
   args: {
     children: "Loading...",
-    intent: "primary",
-    size: "sm",
-    rounded: "sm",
     loading: true,
-    reverseItems: true,
-    loadingIcon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        data-slot="icon"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
-        />
-      </svg>
-    ),
+    loadingIcon: <LoadingIconComp />,
   },
 };
 
-export const BorderStyle: StoryObj<typeof meta> = {
+export const ReverseItems: StoryObj<typeof meta> = {
   args: {
     children: "Click me",
-    intent: "primary",
-    size: "sm",
-    rounded: "sm",
+    reverseItems: true,
+    loading: true,
+    loadingIcon: <LoadingIconComp />,
+  },
+};
+
+export const DoubleStyle: StoryObj<typeof meta> = {
+  args: {
+    children: "Click me",
     borderStyle: "double",
+  },
+};
+
+export const DashedStyle: StoryObj<typeof meta> = {
+  args: {
+    children: "Click me",
+    borderStyle: "dashed",
+  },
+};
+
+export const SolidStyle: StoryObj<typeof meta> = {
+  args: {
+    children: "Click me",
+    borderStyle: "solid",
+  },
+};
+
+export const DottedStyle: StoryObj<typeof meta> = {
+  args: {
+    children: "Click me",
+    borderStyle: "dotted",
+  },
+};
+
+export const Bold: StoryObj<typeof meta> = {
+  args: {
+    children: "Click me",
+    bold: true,
   },
 };
 
