@@ -76,6 +76,13 @@ const meta: Meta<typeof Button> = {
         disable: true,
       },
     },
+    borderStyle: {
+      control: {
+        type: "select",
+        options: ["none", "dashed", "dotted", "solid", "double"],
+      },
+      description: "Dashed border",
+    },
   },
 };
 
@@ -115,6 +122,16 @@ export const LoadingIconAndPlacement: StoryObj<typeof meta> = {
         />
       </svg>
     ),
+  },
+};
+
+export const BorderStyle: StoryObj<typeof meta> = {
+  args: {
+    children: "Click me",
+    intent: "primary",
+    size: "sm",
+    rounded: "sm",
+    borderStyle: "double",
   },
 };
 

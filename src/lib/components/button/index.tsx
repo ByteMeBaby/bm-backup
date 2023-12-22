@@ -28,6 +28,7 @@ function Button({
   reverseItems = false,
   style,
   type,
+  borderStyle,
   ...rest
 }: ButtonProps) {
   const isDisabled = disabled || loading;
@@ -43,6 +44,7 @@ function Button({
           rounded,
           bold,
           reverseItems,
+          borderStyle,
         })
       )}
       onClick={onClick}

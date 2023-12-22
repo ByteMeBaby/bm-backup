@@ -25,6 +25,15 @@ export const button = cva("cursor-pointer", {
       xl: "px-6 py-3 text-base",
       "2xl": "px-8 py-4 text-lg",
     },
+
+    borderStyle: {
+      dashed: "border-dashed border-2",
+      double: "border-double border-2",
+      dotted: "border-dotted border-2",
+      solid: "border-solid border-2",
+      none: "border-none",
+    },
+
     disabled: {
       true: "opacity-50 disabled:pointer-events-none",
     },
@@ -50,5 +59,6 @@ export const button = cva("cursor-pointer", {
     rounded: "sm",
     bold: false,
     reverseItems: true,
+    borderStyle: "none",
   },
 });
