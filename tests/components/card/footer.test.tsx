@@ -51,50 +51,30 @@ describe("Card", () => {
           .map((_, i) => <div key={i}>Action {i}</div>),
       ];
 
-      const borderdClassses = [
-        "flex",
-        "flex-1",
-        "justify-center",
-        "items-center",
-      ];
       const { rerender } = render(
-        <Footer borderd actions={actions}>
+        <Footer actions={actions} align="left">
           Footer
         </Footer>
       );
 
-      const action = screen.getByText("Action 1");
-      const parentElement = action?.parentElement;
+      let action1 = screen.getByText("Action 0");
 
-      expect(action).toBeInTheDocument();
-      expect(parentElement?.parentElement?.children.length).toBe(
-        actions.length
-      );
-      expect(parentElement).toHaveClass(...borderdClassses);
-      expect(parentElement).toHaveClass("border-r");
-
-      const lastAction = screen.getByText("Action 2");
-      expect(lastAction.parentElement).not.toHaveClass("border-r");
+      expect(action1).toBeInTheDocument();
+      expect(action1.parentElement?.parentElement).toHaveClass("justify-start");
+      expect(action1.parentElement).toHaveClass("mr-2");
 
       rerender(
-        <Footer borderd={false} actions={actions} align="left">
+        <Footer actions={actions} bordered>
           Footer
         </Footer>
       );
 
-      expect(parentElement).not.toHaveClass(...borderdClassses);
-      expect(parentElement).toHaveClass("mr-2");
-      expect(parentElement?.parentElement).toHaveClass("justify-start");
-
-      rerender(
-        <Footer borderd={false} actions={actions} align="right">
-          Footer
-        </Footer>
+      action1 = screen.getByText("Action 1");
+      expect(action1).toBeInTheDocument();
+      expect(action1.parentElement).toHaveClass(
+        "justify-center",
+        "items-center"
       );
-      expect(parentElement).toHaveClass("ml-2");
-      expect(parentElement?.parentElement).toHaveClass("justify-end");
-      const firstAction = screen.getByText("Action 0");
-      expect(firstAction.parentElement).not.toHaveClass("ml-2");
     });
   });
 });

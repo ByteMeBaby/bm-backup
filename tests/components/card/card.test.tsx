@@ -54,7 +54,7 @@ describe("Card", () => {
         actions={actions}
         title="title"
         actionAlignment="right"
-        borderdActions={false}
+        borderedActions={false}
       />
     );
 

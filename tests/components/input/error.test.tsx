@@ -6,9 +6,10 @@ describe("InputField", () => {
       const errorMessage = "Test";
       const primaryClassName = "text-bm_primary-500";
       const style = { background: "rgb(0, 0, 0)" };
+      const largeTextClass = "text-lg";
 
       render(
-        <Error intent="primary" size={"lg"} style={style}>
+        <Error intent="primary" size="lg" style={style}>
           {errorMessage}
         </Error>
       );
@@ -16,7 +17,7 @@ describe("InputField", () => {
       const error = screen.getByText(errorMessage);
 
       expect(error).toBeInTheDocument();
-      expect(error).toHaveClass("text-lg");
+      expect(error).toHaveClass(largeTextClass);
       expect(error).toHaveClass(primaryClassName);
       expect(error).toHaveStyle(style);
     });

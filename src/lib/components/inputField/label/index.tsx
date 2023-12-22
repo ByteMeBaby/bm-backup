@@ -13,7 +13,7 @@ export interface LabelProps
   extends VariantProps<typeof label>,
     ComponentProps {}
 
-export function Label({
+export default function Label({
   children,
   htmlFor,
   className,

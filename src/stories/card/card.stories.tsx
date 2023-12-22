@@ -35,7 +35,7 @@ const meta: Meta<typeof Component> = {
         options: ["left", "right", "evenly", "between"],
       },
       description:
-        "If you want to align actions in a single container then use this prop. To use this you have to pass `false` to borderdActions prop",
+        "If you want to align actions in a single container then use this prop. To use this you have to pass `false` to borderedActions prop",
     },
     actionWrapperClassName: {
       control: {
@@ -43,7 +43,7 @@ const meta: Meta<typeof Component> = {
       },
       description: "Actions ",
     },
-    borderdActions: {
+    borderedActions: {
       control: {
         type: "boolean",
       },
@@ -58,10 +58,10 @@ type Story = StoryObj<typeof meta>;
 export const Basic: Story = {
   args: {
     title: "This is title",
-    borderdActions: true,
+    borderedActions: true,
     children: (
       <div className="p-3 text-gray-600 text-sm">
-        To actionAlignment to work you have to pass false to borderdActions
+        To actionAlignment to work you have to pass false to borderedActions
         prop.
       </div>
     ),

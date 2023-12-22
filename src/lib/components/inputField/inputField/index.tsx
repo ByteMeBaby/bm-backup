@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Input } from "../input";
-import { Label } from "../label";
+import Label from "../label";
 import Error from "../error";
 import { VariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";

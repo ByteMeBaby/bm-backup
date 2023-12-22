@@ -17,7 +17,7 @@ type ComponentProps = {
   actions?: React.ReactNode;
   actionAlignment?: "left" | "right" | "evenly" | "between";
   actionWrapperClassName?: string;
-  borderdActions?: boolean;
+  borderedActions?: boolean;
   loading?: boolean;
   bodyWrapperClassName?: string;
   headerWrapperClassName?: string;
@@ -37,7 +37,7 @@ export function Card({
   actions,
   actionWrapperClassName,
   actionAlignment = "evenly",
-  borderdActions,
+  borderedActions,
   loading = false,
   bodyWrapperClassName,
   headerWrapperClassName,
@@ -71,7 +71,7 @@ export function Card({
       {actions && (
         <Footer
           el="footer"
-          borderd={borderdActions}
+          bordered={borderedActions}
           actionWrapperClassName={actionWrapperClassName}
           wrapperClassName={footerWrapperClassName}
           align={actionAlignment}

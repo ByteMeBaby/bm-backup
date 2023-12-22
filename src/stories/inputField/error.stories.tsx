@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from "@storybook/react";
-import { Error } from "../../lib/components/inputField/error/error";
+import Error from "../../lib/components/inputField/error";
 import React from "react";
 
 const meta: Meta<typeof Error> = {
