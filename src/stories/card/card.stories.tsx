@@ -37,7 +37,7 @@ const meta: Meta<typeof Component> = {
       description:
         "If you want to align actions in a single container then use this prop. To use this you have to pass `false` to borderdActions prop",
     },
-    actionWrapperClasses: {
+    actionWrapperClassName: {
       control: {
         type: "text",
       },
@@ -58,6 +58,7 @@ type Story = StoryObj<typeof meta>;
 export const Basic: Story = {
   args: {
     title: "This is title",
+    borderdActions: true,
     children: (
       <div className="p-3 text-gray-600 text-sm">
         To actionAlignment to work you have to pass false to borderdActions

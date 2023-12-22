@@ -15,7 +15,7 @@ type ComponentProps = {
     | "header"
     | "p";
   children?: React.ReactNode;
-  wrapperClasses?: string;
+  wrapperClassName?: string;
   style?: React.CSSProperties;
   className?: string;
   wrapperStyle?: React.CSSProperties;
@@ -24,14 +24,14 @@ type ComponentProps = {
 export default function Heading({
   el: El = "div",
   children,
-  wrapperClasses,
+  wrapperClassName,
   className,
   style,
   wrapperStyle,
 }: ComponentProps) {
   return (
     <div
-      className={twMerge("border-b p-3", wrapperClasses)}
+      className={twMerge("border-b p-3", wrapperClassName)}
       style={wrapperStyle}
     >
       <El className={className} style={style}>

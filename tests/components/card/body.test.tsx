@@ -9,7 +9,7 @@ describe("Card", () => {
       const customStyle = { color: "rgb(0, 0, 255)" };
 
       render(
-        <Body el={tag} wrapperClasses={wrapperClasses} style={customStyle}>
+        <Body el={tag} wrapperClassName={wrapperClasses} style={customStyle}>
           Body
         </Body>
       );

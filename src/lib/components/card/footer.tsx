@@ -3,22 +3,22 @@ import { twMerge } from "tailwind-merge";
 
 interface FooterProps {
   children?: React.ReactNode;
-  actionWrapperClasses?: string;
+  actionWrapperClassName?: string;
   align?: "left" | "right" | "evenly" | "between";
   borderd?: boolean;
   actions?: React.ReactNode;
-  wrapperClasses?: string;
+  wrapperClassName?: string;
   el?: "footer" | "div" | "header" | "aside" | "span";
   style?: React.CSSProperties;
 }
 
 export default function Footer({
   children,
-  actionWrapperClasses,
+  actionWrapperClassName,
   align = "evenly",
   borderd = false,
   actions,
-  wrapperClasses,
+  wrapperClassName,
   style,
   el: El = "footer",
 }: FooterProps) {
@@ -27,13 +27,13 @@ export default function Footer({
     const numChildren = childrenArray.length;
 
     return (
-      <El className={twMerge(wrapperClasses)} style={style}>
-        <div className={twMerge("flex w-full", actionWrapperClasses)}>
+      <El className={twMerge(wrapperClassName)} style={style}>
+        <div className={twMerge("flex w-full", actionWrapperClassName)}>
           {childrenArray.map((child, index) => {
-            let borderClasses = "border-t p-3";
+            let borderClassName = "border-t p-3";
 
             if (index !== numChildren - 1) {
-              borderClasses += " border-r";
+              borderClassName += " border-r";
             }
 
             return (
@@ -41,7 +41,7 @@ export default function Footer({
                 key={index}
                 className={twMerge(
                   "flex flex-1 justify-center items-center",
-                  borderClasses
+                  borderClassName
                 )}
               >
                 {child}
@@ -65,11 +65,11 @@ export default function Footer({
   const numChildren = childrenArray.length;
 
   return (
-    <El className={twMerge(wrapperClasses)} style={style}>
+    <El className={twMerge(wrapperClassName)} style={style}>
       <div
         className={twMerge(
           `flex w-full items-center p-3 border-t ${justifyContentClass}`,
-          actionWrapperClasses
+          actionWrapperClassName
         )}
       >
         {childrenArray.map((child, index) => {

@@ -17,7 +17,7 @@ export const ShimmerLoader = ({
   };
 
   return (
-    <div className="flex w-full p-3">
+    <div className="flex w-full p-3" data-testid="shimmer-loader">
       {intent === "card" && (
         <div
           className="h-[60px] w-[60px] rounded-full mr-2"

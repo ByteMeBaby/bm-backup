@@ -16,14 +16,15 @@ type ComponentProps = {
   title?: React.ReactNode;
   actions?: React.ReactNode;
   actionAlignment?: "left" | "right" | "evenly" | "between";
-  actionWrapperClasses?: string;
+  actionWrapperClassName?: string;
   borderdActions?: boolean;
   loading?: boolean;
-  bodyWrapperClasses?: string;
-  headerWrapperClasses?: string;
-  headerStyles?: React.CSSProperties;
-  bodyStyles?: React.CSSProperties;
-  footerStyles?: React.CSSProperties;
+  bodyWrapperClassName?: string;
+  headerWrapperClassName?: string;
+  headerStyle?: React.CSSProperties;
+  bodyStyle?: React.CSSProperties;
+  footerStyle?: React.CSSProperties;
+  footerWrapperClassName?: string;
 };
 
 interface CardProps extends ComponentProps, VariantProps<typeof card> {}
@@ -34,15 +35,16 @@ export function Card({
   style,
   title,
   actions,
-  actionWrapperClasses,
+  actionWrapperClassName,
   actionAlignment = "evenly",
-  borderdActions = true,
+  borderdActions,
   loading = false,
-  bodyWrapperClasses,
-  headerWrapperClasses,
-  headerStyles,
-  bodyStyles,
-  footerStyles,
+  bodyWrapperClassName,
+  headerWrapperClassName,
+  headerStyle,
+  bodyStyle,
+  footerStyle,
+  footerWrapperClassName,
   ...rest
 }: CardProps) {
   if (loading) {
@@ -57,23 +59,24 @@ export function Card({
       {title && (
         <Heading
           el="header"
-          wrapperClasses={headerWrapperClasses}
-          style={headerStyles}
+          wrapperClassName={headerWrapperClassName}
+          style={headerStyle}
         >
           {title}
         </Heading>
       )}
-      <Body el="div" wrapperClasses={bodyWrapperClasses} style={bodyStyles}>
+      <Body el="div" wrapperClassName={bodyWrapperClassName} style={bodyStyle}>
         {children}
       </Body>
       {actions && (
         <Footer
           el="footer"
           borderd={borderdActions}
-          actionWrapperClasses={actionWrapperClasses}
+          actionWrapperClassName={actionWrapperClassName}
+          wrapperClassName={footerWrapperClassName}
           align={actionAlignment}
           actions={actions}
-          style={footerStyles}
+          style={footerStyle}
         />
       )}
     </div>

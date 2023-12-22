@@ -9,7 +9,7 @@ describe("Card", () => {
       const wrapperClass = "customWrapperClass";
 
       render(
-        <Footer el="span" wrapperClasses={wrapperClass} style={customStyle}>
+        <Footer el="span" wrapperClassName={wrapperClass} style={customStyle}>
           Footer
         </Footer>
       );
@@ -27,8 +27,8 @@ describe("Card", () => {
 
       render(
         <Footer
-          wrapperClasses={wrapperClasses}
-          actionWrapperClasses={actionWrapperClasses}
+          wrapperClassName={wrapperClasses}
+          actionWrapperClassName={actionWrapperClasses}
           actions={<>Actions</>}
         >
           Footer

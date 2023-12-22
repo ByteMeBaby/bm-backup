@@ -1,7 +1,7 @@
 export default function Body({
   el: El = "div",
   children,
-  wrapperClasses,
+  wrapperClassName,
   style,
 }: {
   el:
@@ -19,11 +19,11 @@ export default function Body({
     | "section"
     | "p";
   children?: React.ReactNode;
-  wrapperClasses?: string;
+  wrapperClassName?: string;
   style?: React.CSSProperties;
 }) {
   return (
-    <El style={style} className={wrapperClasses}>
+    <El style={style} className={wrapperClassName}>
       {children}
     </El>
   );
