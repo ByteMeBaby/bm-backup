@@ -9,7 +9,7 @@ type ComponentProps = {
 
 interface ErrorProps extends ComponentProps, VariantProps<typeof errorStyles> {}
 
-export function Error({
+export default function Error({
   children,
   className,
   intent,

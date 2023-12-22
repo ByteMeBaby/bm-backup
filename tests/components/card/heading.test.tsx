@@ -11,7 +11,7 @@ describe("Card", () => {
       render(
         <Heading
           el={tag}
-          wrapperClasses={wrapperClasses}
+          wrapperClassName={wrapperClasses}
           style={customStyle}
           wrapperStyle={customStyle}
         >
