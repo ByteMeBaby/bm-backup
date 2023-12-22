@@ -5,7 +5,7 @@ interface FooterProps {
   children?: React.ReactNode;
   actionWrapperClasses?: string;
   align?: "left" | "right" | "evenly" | "between";
-  multiContainer?: boolean;
+  borderd?: boolean;
   actions?: React.ReactNode;
   wrapperClasses?: string;
   el?: "footer" | "div" | "header" | "aside" | "span";
@@ -16,13 +16,13 @@ export default function Footer({
   children,
   actionWrapperClasses,
   align = "evenly",
-  multiContainer = false,
+  borderd = false,
   actions,
   wrapperClasses,
   style,
   el: El = "footer",
 }: FooterProps) {
-  if (multiContainer) {
+  if (borderd) {
     const childrenArray = React.Children.toArray(actions);
     const numChildren = childrenArray.length;
 
@@ -68,7 +68,7 @@ export default function Footer({
     <El className={twMerge(wrapperClasses)} style={style}>
       <div
         className={twMerge(
-          `flex w-full ${justifyContentClass} items-center p-3 border-t`,
+          `flex w-full items-center p-3 border-t ${justifyContentClass}`,
           actionWrapperClasses
         )}
       >

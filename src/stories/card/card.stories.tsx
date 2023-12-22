@@ -35,7 +35,7 @@ const meta: Meta<typeof Component> = {
         options: ["left", "right", "evenly", "between"],
       },
       description:
-        "If you want to align actions in a single container then use this prop. To use this you have to pass `false` to multiContainerActions prop",
+        "If you want to align actions in a single container then use this prop. To use this you have to pass `false` to borderdActions prop",
     },
     actionWrapperClasses: {
       control: {
@@ -43,7 +43,7 @@ const meta: Meta<typeof Component> = {
       },
       description: "Actions ",
     },
-    multiContainerActions: {
+    borderdActions: {
       control: {
         type: "boolean",
       },
@@ -60,8 +60,8 @@ export const Basic: Story = {
     title: "This is title",
     children: (
       <div className="p-3 text-gray-600 text-sm">
-        To actionAlignment to work you have to pass false to
-        multiContainerActions prop.
+        To actionAlignment to work you have to pass false to borderdActions
+        prop.
       </div>
     ),
     actions: [

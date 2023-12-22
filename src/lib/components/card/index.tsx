@@ -17,7 +17,7 @@ type ComponentProps = {
   actions?: React.ReactNode;
   actionAlignment?: "left" | "right" | "evenly" | "between";
   actionWrapperClasses?: string;
-  multiContainerActions?: boolean;
+  borderdActions?: boolean;
   loading?: boolean;
   bodyWrapperClasses?: string;
   headerWrapperClasses?: string;
@@ -36,7 +36,7 @@ export function Card({
   actions,
   actionWrapperClasses,
   actionAlignment = "evenly",
-  multiContainerActions = true,
+  borderdActions = true,
   loading = false,
   bodyWrapperClasses,
   headerWrapperClasses,
@@ -69,7 +69,7 @@ export function Card({
       {actions && (
         <Footer
           el="footer"
-          multiContainer={multiContainerActions}
+          borderd={borderdActions}
           actionWrapperClasses={actionWrapperClasses}
           align={actionAlignment}
           actions={actions}
