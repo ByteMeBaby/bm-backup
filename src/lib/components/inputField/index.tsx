@@ -26,6 +26,7 @@ export type ComponentProps = {
   prefixWrapperStyles?: React.CSSProperties;
   postfixWrapperStyles?: React.CSSProperties;
   fullWidth?: boolean;
+  inputRef?: React.Ref<HTMLInputElement>;
 };
 
 export default function Input({
@@ -54,6 +55,7 @@ export default function Input({
   postfixWrapperStyles,
   prefixWrapperStyles,
   fullWidth = true,
+  inputRef,
 }: ComponentProps) {
   return (
     <InputField
@@ -88,6 +90,7 @@ export default function Input({
         postfixWrapperStyles={postfixWrapperStyles}
         prefixWrapperStyles={prefixWrapperStyles}
         fullWidth={fullWidth}
+        inputRef={inputRef}
       />
       {error && (
         <InputField.Error

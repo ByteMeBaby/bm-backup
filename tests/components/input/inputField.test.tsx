@@ -1,5 +1,6 @@
 import { screen, render } from "@testing-library/react";
 import Input, { InputField } from "../../../src/lib/components/inputField";
+import { createRef } from "react";
 
 describe("Basic input", () => {
   it("renders a input component", () => {
@@ -27,5 +28,19 @@ describe("Compound component", () => {
 
     input.focus();
     expect(input).toHaveFocus();
+  });
+
+  it("correctly passes the ref to input", () => {
+    const ref = createRef<HTMLInputElement>();
+
+    render(
+      <InputField>
+        <InputField.Input id="input" inputRef={ref} />
+      </InputField>
+    );
+
+    expect(ref.current).toBeInTheDocument();
+    ref?.current?.focus();
+    expect(ref.current).toHaveFocus();
   });
 });
