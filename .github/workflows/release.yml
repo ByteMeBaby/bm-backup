@@ -2,7 +2,7 @@ name: release BareMetal
 
 on:
   pull_request:
-    branches: [main]
+    branches: [do_not_run]
     types: [closed]
 
 jobs:
