@@ -29,6 +29,9 @@ function Button({
   style,
   type,
   borderStyle,
+  className,
+  fullWidth,
+  selfAlign,
   ...rest
 }: ButtonProps) {
   const isDisabled = disabled || loading;
@@ -36,7 +39,7 @@ function Button({
   return (
     <button
       className={twMerge(
-        "flex items-center",
+        "flex justify-center",
         button({
           intent,
           size,
@@ -45,7 +48,10 @@ function Button({
           bold,
           reverseItems,
           borderStyle,
-        })
+          fullWidth,
+          selfAlign,
+        }),
+        className
       )}
       onClick={onClick}
       disabled={isDisabled}
@@ -61,5 +67,7 @@ function Button({
     </button>
   );
 }
+
+Button.DisplayName = "Button";
 
 export default Button;

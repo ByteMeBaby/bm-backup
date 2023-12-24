@@ -27,9 +27,10 @@ export type ComponentProps = {
   postfixWrapperStyles?: React.CSSProperties;
   fullWidth?: boolean;
   inputRef?: React.Ref<HTMLInputElement>;
+  disabled?: boolean;
 };
 
-export default function Input({
+function Input({
   label,
   error,
   id = "input" + Date.now(),
@@ -55,6 +56,7 @@ export default function Input({
   postfixWrapperStyles,
   prefixWrapperStyles,
   fullWidth = true,
+  disabled,
   inputRef,
 }: ComponentProps) {
   return (
@@ -91,6 +93,7 @@ export default function Input({
         prefixWrapperStyles={prefixWrapperStyles}
         fullWidth={fullWidth}
         inputRef={inputRef}
+        disabled={disabled}
       />
       {error && (
         <InputField.Error
@@ -114,4 +117,7 @@ export default function Input({
   );
 }
 
+Input.DisplayName = "Input";
+
 export { InputField };
+export default Input;

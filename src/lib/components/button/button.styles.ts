@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-export const button = cva("cursor-pointer", {
+export const button = cva("cursor-pointer self-start", {
   variants: {
     intent: {
       primary:
@@ -25,7 +25,9 @@ export const button = cva("cursor-pointer", {
       xl: "px-6 py-3 text-base",
       "2xl": "px-8 py-4 text-lg",
     },
-
+    fullWidth: {
+      true: "w-full",
+    },
     borderStyle: {
       dashed: "border-dashed border-2",
       double: "border-double border-2",
@@ -33,7 +35,6 @@ export const button = cva("cursor-pointer", {
       solid: "border-solid border-2",
       none: "border-none",
     },
-
     disabled: {
       true: "opacity-50 disabled:pointer-events-none",
     },
@@ -51,6 +52,13 @@ export const button = cva("cursor-pointer", {
     reverseItems: {
       true: "flex-row-reverse",
     },
+    selfAlign: {
+      start: "self-start",
+      center: "self-center",
+      end: "self-end",
+      stretch: "self-stretch",
+      auto: "self-auto",
+    },
   },
   defaultVariants: {
     intent: "primary",
@@ -60,5 +68,6 @@ export const button = cva("cursor-pointer", {
     bold: false,
     reverseItems: true,
     borderStyle: "none",
+    fullWidth: false,
   },
 });

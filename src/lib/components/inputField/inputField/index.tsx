@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Input } from "../input";
+import Input from "../input";
 import Label from "../label";
 import Error from "../error";
 import { VariantProps } from "class-variance-authority";
@@ -40,6 +40,8 @@ export function InputField({
     </div>
   );
 }
+
+InputField.DisplayName = "InputField";
 
 InputField.Input = Input;
 InputField.Label = Label;

@@ -1,5 +1,5 @@
 import { createRef } from "react";
-import { Input } from "../../../src/lib/components/inputField/input";
+import Input from "../../../src/lib/components/inputField/input";
 import { screen, render } from "@testing-library/react";
 
 describe("InputField", () => {

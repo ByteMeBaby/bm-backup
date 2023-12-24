@@ -11,7 +11,7 @@ const prefixPostfixSizes = cva("", {
       xl: "text-xl",
       "2xl": "text-2xl",
       "3xl": "text-3xl",
-      "4xl": "text-43xl",
+      "4xl": "text-4xl",
       "5xl": "text-5xl",
       "6xl": "text-6xl",
     },
@@ -29,7 +29,7 @@ const wrapperStyles = cva("", {
   },
 });
 
-type ComponentProps = {
+interface ComponentProps {
   id: string;
   type?: string;
   placeholder?: string;
@@ -45,13 +45,17 @@ type ComponentProps = {
   postfixWrapperStyles?: React.CSSProperties;
   prefixWrapperStyles?: React.CSSProperties;
   inputRef?: React.Ref<HTMLInputElement>;
-};
+}
 
 export interface InputProps
   extends ComponentProps,
-    VariantProps<typeof input> {}
+    VariantProps<typeof input>,
+    Omit<
+      React.HTMLProps<HTMLInputElement>,
+      "id" | "onChange" | "prefix" | "size"
+    > {}
 
-export function Input({
+export default function Input({
   type = "text",
   id,
   intent,
@@ -131,3 +135,5 @@ export function Input({
     </div>
   );
 }
+
+Input.DisplayName = "Input";

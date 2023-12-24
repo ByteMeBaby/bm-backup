@@ -1,4 +1,4 @@
-import { Input as Component } from "../../lib/components/inputField/input";
+import Component from "../../lib/components/inputField/input";
 import { Meta, StoryObj } from "@storybook/react";
 import "../../index.css";
 
